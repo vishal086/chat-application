@@ -17,13 +17,13 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
 const corsOption={
-    origin:true,
+    origin:true, 
     credentials:true
 };
 app.use(cors(corsOption)); 
 
 
-// routes
+// routes 
 app.use("/api/v1/user",userRoute); 
 app.use("/api/v1/message",messageRoute);
  

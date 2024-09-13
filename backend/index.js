@@ -29,7 +29,7 @@ app.get('/',(req,res) =>{
 })
 app.use("/api/v1/user",userRoute); 
 app.use("/api/v1/message",messageRoute);
- 
+  
 
 server.listen(PORT, ()=>{
     connectDB();

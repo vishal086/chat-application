@@ -24,6 +24,9 @@ app.use(cors(corsOption));
 
 
 // routes 
+app.get('/',(req,res) =>{
+    res.send("Welcome to Chat-Application")
+})
 app.use("/api/v1/user",userRoute); 
 app.use("/api/v1/message",messageRoute);
  

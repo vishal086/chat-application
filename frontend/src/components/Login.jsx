@@ -10,19 +10,14 @@ const Login = () => {
   const [user, setUser] = useState({
     username: "",
     password: "",
-  });
+  });  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${BASE_URL}/api/v1/user/login`, user, {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        withCredentials: true
-      });
+      const res = await axios.post(`${BASE_URL}/api/v1/user/login`, user, {withCredentials: true});
       navigate("/");
       console.log(res);
       dispatch(setAuthUser(res.data));
@@ -31,7 +26,7 @@ const Login = () => {
       console.log(error);
     }
     setUser({
-      username: "",
+      username: "", 
       password: ""
     })
   }
@@ -44,10 +39,10 @@ const Login = () => {
           <div>
             <label className='label p-2'>
               <span className='text-white label-text'>Username</span>
-            </label>
+            </label> 
             <input
               value={user.username}
-              onChange={(e) => setUser({ ...user, username: e.target.value })}
+              onChange={(e) => setUser({ ...user, username: e.target.value })} 
               className='w-full input input-bordered h-10'
               type="text"
               placeholder='Username' />
